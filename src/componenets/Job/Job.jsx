@@ -1,9 +1,11 @@
 import React from "react";
+import { FaLocationDot } from "react-icons/fa6";
+import { CiDollar } from "react-icons/ci";
 
 const Job = ({ job }) => {
-  const { logo, salary, job_type, remote_or_onsite, company_name, job_title,  } = job;
+  const { logo, salary, job_type, remote_or_onsite, company_name, job_title, location } = job;
   return (
-    <div className="card card-compact bg-base-300 shadow-xl">
+    <div className="card card-compact bg-base-300 shadow-xl m-2 border-gray-400">
       <figure>
         <img
           src={logo}
@@ -16,6 +18,10 @@ const Job = ({ job }) => {
         <div>
             <button className="px-5 py-2 font-extrabold border rounded border-gray-300 mr-4 text-blue-300">{remote_or_onsite}</button>
             <button  className="px-5 py-2 font-extrabold border rounded border-gray-300 mr-4  text-blue-300">{job_type}</button>
+        </div>
+        <div  className="flex">
+            <div className="flex pr-3 text-xl"><FaLocationDot className="pr-2 text-2xl" /> {location} </div>
+            <div  className="flex pr-3 text-xl"><CiDollar className="pr-2 text-3xl" /> {salary} </div>
         </div>
         <div className="card-actions justify">
           <button className="btn btn-primary">View Details</button>
